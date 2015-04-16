@@ -1,6 +1,6 @@
 ## [이미지넷(ImageNet)](http://image-net.org/download-images) 데이터에 대해 토치7(Torch7)과 여러 개의 GPU로 객체 분류 훈련하기
 
-원본: https://github.com/soumith/imagenet-multiGPU.torch
+원문: https://github.com/soumith/imagenet-multiGPU.torch
 
 (영상들을 위한 범용 그리고 고도로 확장 가능한 데이터 로더를 포함하는 1200줄의) 이 짧은 예제를 통해 우리는 다음을 보여주고자 합니다:
 - 이미지넷에 대해 [알렉스넷(AlexNet)](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks) 또는 [오버핏(Overfeat)](http://arxiv.org/abs/1312.6229)을 훈련
