@@ -69,7 +69,7 @@ th main.lua --data [imagenet-folder with train and val folders] -netType overfea
 훈련 스크립트는 현재 top-1 그리고 top-5 에러와 매 미니 배치(mini-batch)에서의 목적 함수 손실(objective loss)를 출력합니다.
 우리는 알렉스넷이 53 에포크(epoch)의 끝에서 42.5% 에러로 수렴하도록 학습 율을 고정시켰습니다(hard-coded).
 
-매 에포크의 끝에서, 모델은 디스크에 (model_[xx].t7와 같은 이름으로) 저장됩니다. 그 이름에서 xx 에포크 횟수 입니다.
+매 에포크의 끝에서, 모델은 디스크에 (model_[xx].t7와 같은 이름으로) 저장됩니다. 그 이름에서 xx는 에포크 횟수 입니다.
 당신은 torch.load를 사용하여 이 모델을 언제든지 다시 토치로 로드할 수 있습니다.
 ```lua
 model = torch.load('model_10.t7') -- loading back a saved model
