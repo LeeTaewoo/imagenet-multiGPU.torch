@@ -96,4 +96,4 @@ th main.lua -nDonkeys 0 [...options...]
 - `model.lua` (~80 줄) - 알렉스넷 모델과 판별 함수 생성
 - `train.lua` (~190 줄) - 네트워크를 훈련시키기 위한 로직. 좋은 결과들을 만들기 위해 학습 율과 가중치 디케이(wight decay)는 프로그램 내부적으로 고정됨(hard-coded).
 - `test.lua` (~120 줄) - 검증 집합에서 네트워크를 시험하기 위한 로직 (top-1과 top-5 에러 계산을 포함하는)
-- `dataset.lua` (~430 줄) - 범용 데이터 로더, 대부분 [here: imagenetloader.torch](https://github.com/soumith/imagenetloader.torch)에서 파생됨. 링크의 저장소에 이 로더 사용을 위한 더 많은 문서들과 예제들이 있음.
+- `dataset.lua` (~430 줄) - 범용 데이터 로더, 대부분 [here: imagenetloader.torch](https://github.com/soumith/imagenetloader.torch)에서 파생됨. 그 저장소에 이 로더 사용을 위한 더 많은 문서들과 예제들이 있음.
