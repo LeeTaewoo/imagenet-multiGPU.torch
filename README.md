@@ -72,7 +72,7 @@ th main.lua --data [imagenet-folder with train and val folders] -netType overfea
 매 에포크의 끝에서, 모델은 디스크에 model_[xx].t7와 같은 이름으로 저장됩니다. 그 이름에서 xx는 에포크 횟수 입니다.
 당신은 torch.load를 사용하여 이 모델을 언제든지 다시 토치로 로드할 수 있습니다.
 ```lua
-model = torch.load('model_10.t7') -- loading back a saved model
+model = torch.load('model_10.t7') -- 저장된 모델을 다시 로딩
 ```
 
 유사하게, 만약 당신의 모델을 새로운 영상에서 시험하고 싶다면, 당신은 당신의 영상을 로드하기 위해 donkey.lua 안의 103번째 줄의 testHook를 사용할 수 있습니다. testHook은 예측을 위해 그 영상을 모델에 입력시킵니다. 이를테면:
