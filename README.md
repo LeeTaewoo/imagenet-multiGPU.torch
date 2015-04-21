@@ -49,21 +49,21 @@ th main.lua --help
 훈련을 실행하기 위해, main.lua를 실행시킵니다.
 기본적으로, 그 스크립트는 CuDNN과 두 개의 데이터-로더 스레드 기반의 1-GPU 알렉스네트를 실행시킵니다.
 ```bash
-th main.lua --data [imagenet-folder with train and val folders]
+th main.lua -data [train과 val 폴더들이 있는 이미지네트 폴더]
 ```
 
 2-GPU 기반 알렉스네트 + CuDNN을 위해서는, 이렇게 실행시킵니다:
 ```bash
-th main.lua --data [imagenet-folder with train and val folders] -nGPU 2 -backend cudnn -netType alexnet
+th main.lua -data [train과 val 폴더들이 있는 이미지네트 폴더] -nGPU 2 -backend cudnn -netType alexnet
 ```
 유사하게, 다른 쿠다 커널들을 사용하기 위해 백엔드를 'cunn'으로 바꿀 수 있습니다. 
 
 또한 당신은 다음 명령어를 사용하여 오버피트를 훈련시킬 수 있습니다:
 ```bash
-th main.lua --data [imagenet-folder with train and val folders] -netType overfeat
+th main.lua -data [train과 val 폴더들이 있는 이미지네트 폴더] -netType overfeat
 
 # 여러 개 GPU 오버피트 (2-GPU라고 합시다)
-th main.lua --data [imagenet-folder with train and val folders] -netType overfeat -nGPU 2
+th main.lua -data [train과 val 폴더들이 있는 이미지네트 폴더] -netType overfeat -nGPU 2
 ```
 
 훈련 스크립트는 현재 top-1 그리고 top-5 에러와 매 미니 배치(mini-batch)에서의 목적 함수 손실(objective loss)를 출력합니다.
