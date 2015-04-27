@@ -2,16 +2,16 @@
 
 원문: https://github.com/soumith/imagenet-multiGPU.torch
 
-(영상들을 위한 범용 그리고 고도로 확장 가능한 데이터 로더를 포함하는 1200줄의) 이 짧은 예제를 통해 우리는 다음을 보이고자 합니다:
+(영상들을 위한 범용 그리고 고도로 확장 가능한 데이터 로더를 포함하는 1,200줄의) 이 짧은 예제를 통해 우리는 다음을 보이고자 합니다:
 - 이미지네트에 대해 [알렉스네트(AlexNet)](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks) 또는 [오버피트(Overfeat)](http://arxiv.org/abs/1312.6229)를 훈련
 - 다양한 백엔드(backend)들을 보여줌: CuDNN, CuNN
-- 여러 개의 GPU들로 훈련을 가속시키기 위해 nn.ModelParallel 그리고 nn.DataParalell 사용
-- 훈련을 더욱 가속시키기 위해 nn.SpatialConvolutionCuFFT 사용
+- 여러 개의 GPU들로 훈련을 가속하기 위해 nn.ModelParallel 그리고 nn.DataParalell 사용
+- 훈련을 더욱 가속하기 위해 nn.SpatialConvolutionCuFFT 사용
 - 디스크로부터의 멀티스레드화된 데이터 로딩 (한 스레드에서 한 다른 스레드로 직렬화 없이 텐서들의 전송을 보여줌)
 
 ### 미리 준비할 것들
 - 쿠다(CUDA) GPU가 있는 피시(PC)에 토치(Torch) 배포판 설치
-- http://image-net.org/download-images 에서 2012년 ImageNet 데이터세트 다운로드. 그 데이터세트는 1000개 부류와 120만 개 영상들로 구성됨.
+- http://image-net.org/download-images 에서 2012년 ImageNet 데이터세트 내려받기. 그 데이터세트는 1,000개 부류와 120만 개 영상들로 구성됨.
 - 이 명령어 실행:
 ```bash
 git clone https://github.com/torch/nn && cd nn && git checkout getParamsByDevice && luarocks make rocks/nn-scm-1.rockspec
