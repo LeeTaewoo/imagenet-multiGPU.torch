@@ -75,7 +75,7 @@ th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더] -
 model = torch.load('model_10.t7') -- 저장된 모델을 다시 로딩
 ```
 
-유사하게, 만약 당신의 모델을 새로운 영상에서 시험하고 싶다면, 당신은 당신의 영상을 로드하기 위해 donkey.lua의 103번째 줄에 있는 testHook를 사용할 수 있습니다. testHook은 예측을 위해 그 영상을 모델에 입력합니다. 이를테면:
+유사하게, 만약 당신의 모델을 새로운 영상에서 시험하고 싶다면, 당신의 영상을 로드하기 위해 donkey.lua의 103번째 줄에 있는 testHook를 사용할 수 있습니다. testHook은 예측을 위해 그 영상을 모델에 입력합니다. 이를테면:
 ```lua
 dofile('donkey.lua')
 img = testHook({loadSize}, 'test.jpg')
@@ -83,7 +83,7 @@ model = torch.load('model_10.t7')
 predictions = model:forward(img:cuda())
 ```
 
-만약 당신이 이 예제를 재사용하고, 스크립트들을 디버그하기 원한다면, 저는 싱글-스레드 모드로 디버그 및 개발하기를 추천합니다. 그래야 stack trace들이 완전히 출력되기 때문입니다.
+만약 이 예제를 재사용하고, 스크립트들을 디버그하기 원한다면, 저는 싱글-스레드 모드로 디버그 및 개발하기를 추천합니다. 그래야 stack trace들이 완전히 출력되기 때문입니다.
 ```lua
 th main.lua -nDonkeys 0 [...options...]
 ```
