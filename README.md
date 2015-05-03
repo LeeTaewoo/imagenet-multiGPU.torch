@@ -18,8 +18,6 @@ git clone https://github.com/torch/nn && cd nn && git checkout getParamsByDevice
 ```
 
 ### 데이터 처리
-데이터베이스는 (보통 빠른 로드를 위해) [SSD](http://ko.wikipedia.org/wiki/%EC%86%94%EB%A6%AC%EB%93%9C_%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%8A%B8_%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C)에 저장됩니다. 그러나 우리는 속도 손실 없이 [NFS](http://ko.wikipedia.org/wiki/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC_%ED%8C%8C%EC%9D%BC_%EC%8B%9C%EC%8A%A4%ED%85%9C) 기반 데이터 로더를 사용하였습니다. 사용법은 단순합니다: SubFolderName == ClassName. 예를 들어, 만약 {cat,dog} 부류가 있다면, cat 영상들은 dataset/cat 폴더로 그리고 dog 영상들은 dataset/dog 폴더로 이동됩니다.
-
 이미지네트 훈련 영상들은 이미 (n07579787, n07880968 같은) 적절한 하위 폴더에 있습니다. 우리가 해야 할 일은 검증 정답(validation groundtruth)을 얻고 그 검증 영상들을 적절한 하위 폴더들로 옮기는 일입니다. 이를 위해, ILSVRC2012_img_train.tar 그리고 ILSVRC2012_img_val.tar를 내려받으십시오. 그리고 다음 명령어들을 입력합니다:
 
 ```bash
