@@ -18,7 +18,7 @@ git clone https://github.com/torch/nn && cd nn && git checkout getParamsByDevice
 ```
 
 ### 데이터 처리
-이미지네트 훈련 영상들은 이미 (n07579787, n07880968 같은) 적절한 하위 폴더에 있습니다. 우리가 해야 할 일은 검증 정답(validation groundtruth)을 얻고 그 검증 영상들을 적절한 하위 폴더들로 옮기는 일입니다. 이를 위해, ILSVRC2012_img_train.tar 그리고 ILSVRC2012_img_val.tar를 내려받으십시오. 그리고 다음 명령어들을 입력합니다:
+이미지네트 훈련 영상들은 이미 n07579787, n07880968 같은 적절한 하위 폴더에 있습니다. 우리가 해야 할 일은 검증 정답(validation groundtruth)을 얻고 그 검증 영상들을 적절한 하위 폴더들로 옮기는 일입니다. 이를 위해, ILSVRC2012_img_train.tar 그리고 ILSVRC2012_img_val.tar를 내려받으십시오. 그리고 다음 명령어들을 입력합니다:
 
 ```bash
 # 훈련 데이터 추출
