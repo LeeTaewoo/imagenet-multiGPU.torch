@@ -39,18 +39,18 @@ find . -name "*.JPEG" | xargs -I {} convert {} -resize "256^>" {}
 ```
 
 ### 실행
-훈련 스크립트들에는 몇 가지 옵션들이 딸려 있습니다. 그 스크립트들을 --help 플래그와 함께 실행시키면, 그 옵션들을 볼 수 있습니다. 
+훈련 스크립트들에는 몇 가지 옵션들이 딸려 있습니다. 그 스크립트들을 --help 플래그와 함께 실행시키면 그 옵션들을 볼 수 있습니다. 
 ```bash
 th main.lua --help
 ```
 
-훈련을 실행하기 위해, main.lua를 실행합니다.
+훈련을 실행하기 위해 main.lua를 실행합니다.
 기본으로, main.lua 스크립트는 CuDNN과 두 개의 데이터-로더 스레드 기반 1-GPU 알렉스네트를 실행합니다.
 ```bash
 th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더]
 ```
 
-2-GPU 기반 알렉스네트 + CuDNN을 실행하기 위해서는, 이렇게 입력합니다:
+2-GPU 기반 알렉스네트 + CuDNN을 실행하기 위해서는 이렇게 입력합니다:
 ```bash
 th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더] -nGPU 2 -backend cudnn -netType alexnet
 ```
@@ -65,7 +65,7 @@ th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더] -
 ```
 
 훈련 스크립트는 현재 top-1 그리고 top-5 에러와 매 미니 배치(mini-batch)의 목적 함수 손실(objective loss)를 출력합니다.
-우리는 알렉스네트가 53 에포크(epoch)가 끝날 때, 42.5% 에러로 수렴하도록 학습률을 고정하였습니다(hard-coded).
+우리는 알렉스네트가 53 에포크(epoch)가 끝날 때 42.5% 에러로 수렴하도록 학습률을 고정하였습니다(hard-coded).
 
 매 에포크 끝에서, 모델은 디스크에 model_[xx].t7과 같은 이름으로 저장됩니다. 그 이름에서 xx는 에포크 횟수입니다.
 torch.load를 사용하여 이 모델은 언제든지 다시 토치로 로드될 수 있습니다.
@@ -73,7 +73,7 @@ torch.load를 사용하여 이 모델은 언제든지 다시 토치로 로드될
 model = torch.load('model_10.t7') -- 저장된 모델을 다시 로딩
 ```
 
-유사하게, 만약 모델을 새로운 영상에 대해 시험하고 싶다면, 그 영상을 로드하기 위해 donkey.lua의 103번째 줄에 있는 testHook를 사용할 수 있습니다. testHook는 예측을 위해 그 영상을 모델에 입력합니다. 이를테면:
+유사하게, 만약 모델을 새로운 영상에 대해 시험하고 싶다면 그 영상을 로드하기 위해 donkey.lua의 103번째 줄에 있는 testHook를 사용할 수 있습니다. testHook는 예측을 위해 그 영상을 모델에 입력합니다. 이를테면:
 ```lua
 dofile('donkey.lua')
 img = testHook({loadSize}, 'test.jpg')
@@ -81,7 +81,7 @@ model = torch.load('model_10.t7')
 predictions = model:forward(img:cuda())
 ```
 
-만약 이 예제를 재사용하거나 스크립트를 디버그하기 원한다면, 싱글-스레드 모드로 디버그 및 개발하기를 추천합니다. 그래야 stack trace들이 완전히 출력되기 때문입니다.
+만약 이 예제를 재사용하거나 스크립트를 디버그하기 원한다면 싱글-스레드 모드로 디버그 및 개발하기를 추천합니다. 그래야 stack trace들이 완전히 출력되기 때문입니다.
 ```lua
 th main.lua -nDonkeys 0 [...options...]
 ```
