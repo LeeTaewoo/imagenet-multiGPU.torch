@@ -60,7 +60,7 @@ th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더] -
 ```bash
 th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더] -netType overfeat
 
-# 여러 개 GPU 오버피트 (2-GPU라고 합시다)
+# 다수의 GPU 오버피트 (2-GPU라고 합시다)
 th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더] -netType overfeat -nGPU 2
 ```
 
