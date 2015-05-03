@@ -1,4 +1,4 @@
-## [이미지네트(ImageNet)](http://image-net.org/download-images) 데이터에 대해 토치7(Torch7)과 여러 개의 GPU로 객체 분류 훈련하기
+## Torch7과 다수의 GPU를 사용한 [이미지네트(ImageNet)](http://image-net.org/download-images) 객체 분류
 
 원문: https://github.com/soumith/imagenet-multiGPU.torch
 
