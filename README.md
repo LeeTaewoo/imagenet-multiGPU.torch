@@ -45,7 +45,7 @@ th main.lua --help
 ```
 
 훈련을 실행하기 위해 main.lua를 실행합니다.
-기본으로, main.lua 스크립트는 CuDNN과 두 개의 데이터-로더 스레드 기반 1-GPU 알렉스네트를 실행합니다.
+기본으로, main.lua 스크립트는 CuDNN과 두 개의 데이터 로더 스레드 기반 1-GPU 알렉스네트를 실행합니다.
 ```bash
 th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더]
 ```
