@@ -11,7 +11,7 @@
 
 ### 미리 준비할 것
 - 쿠다(CUDA) GPU가 있는 피시(PC)에 토치(Torch) 배포판 설치
-- http://image-net.org/download-images 에서 2012년 ImageNet 데이터세트 내려받기. 그 데이터세트는 1,000개 부류(class)와 120만 개 영상들로 구성됨.
+- http://image-net.org/download-images 에서 2012년 이미지네트 데이터세트 내려받기. 그 데이터세트는 1,000개 부류(class)와 120만 개 영상들로 구성됨.
 - 이 명령어 실행:
 ```bash
 git clone https://github.com/torch/nn && cd nn && git checkout getParamsByDevice && luarocks make rocks/nn-scm-1.rockspec
@@ -44,13 +44,13 @@ find . -name "*.JPEG" | xargs -I {} convert {} -resize "256^>" {}
 th main.lua --help
 ```
 
-훈련을 실행하기 위해 main.lua를 실행합니다.
-기본으로, main.lua 스크립트는 CuDNN과 두 개의 데이터 로더 스레드 기반 1-GPU 알렉스네트를 실행합니다.
+훈련을 위해 main.lua를 실행합니다.
+기본으로, main.lua 스크립트는 cuDNN과 두 개의 데이터 로더 스레드 기반 1-GPU 알렉스네트를 실행합니다.
 ```bash
 th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더]
 ```
 
-2-GPU 기반 알렉스네트 + CuDNN을 실행하기 위해서는 이렇게 입력합니다:
+2-GPU 기반 알렉스네트 + cuDNN을 실행하려면 이렇게 입력합니다:
 ```bash
 th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더] -nGPU 2 -backend cudnn -netType alexnet
 ```
