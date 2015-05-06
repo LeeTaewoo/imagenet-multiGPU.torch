@@ -64,7 +64,7 @@ th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더] -
 th main.lua -data [train과 val 폴더가 들어있는 이미지네트 폴더] -netType overfeat -nGPU 2
 ```
 
-훈련 스크립트는 현재 top-1 그리고 top-5 에러와 매 미니 배치(mini-batch)의 목적 함수 손실(objective loss)를 출력합니다.
+훈련 스크립트는 현재 top-1 그리고 top-5 에러와 매 미니 배치(mini-batch)의 목적 함수 손실(objective loss)을 출력합니다.
 우리는 알렉스네트가 53 에포크(epoch)가 끝날 때 42.5% 에러로 수렴하도록 학습률을 코드 안에서 설정하였습니다(hard-coded).
 
 매 에포크 끝에서, 모델은 디스크에 model_[xx].t7과 같은 이름으로 저장됩니다. 그 이름에서 xx는 에포크 횟수입니다.
