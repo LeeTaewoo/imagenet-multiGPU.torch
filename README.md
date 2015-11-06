@@ -1,6 +1,7 @@
 ## Torch7과 다수의 GPU를 사용한 [이미지네트(ImageNet)](http://image-net.org/download-images) 객체 분류
 
 원문: https://github.com/soumith/imagenet-multiGPU.torch
+2015년 11월 6일에 마지막으로 갱신됨.
 
 (영상들을 위한 범용 그리고 고도로 확장 가능한 데이터 로더를 포함하는 1,200줄의) 이 짧은 예제로 우리는 다음을 보이려고 합니다:
 - 이미지네트에 대해 [알렉스네트(AlexNet)](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks), [오버피트(Overfeat)](http://arxiv.org/abs/1312.6229), VGG, Googlenet를 훈련
@@ -9,14 +10,13 @@
 - 디스크에서 멀티스레드로 데이터 로딩 (한 스레드에서 다른 한 스레드로 직렬화 없이 텐서들의 전송을 보임)
 
 ### 미리 준비할 것
-- 쿠다(CUDA) GPU가 있는 피시(PC)에 토치(Torch) 배포판 설치
+- [쿠다(CUDA) GPU가 있는 피시(PC)에 토치(Torch) 배포판 설치](http://torch.ch/docs/getting-started.html#_)
+- 만약 Mac OS X이면, `wc`, `find`, 그리고 `cut`의 GNU 버전을 얻기 위해 `brew install coreutils findutils` 실행.
 - http://image-net.org/download-images 에서 2012년 이미지네트 데이터세트 내려받기. 그 데이터세트는 1,000개 부류(class)와 120만 개 영상들로 구성됨.
-- 이 명령어 실행:
-```bash
-git clone https://github.com/torch/nn && cd nn && git checkout getParamsByDevice && luarocks make rocks/nn-scm-1.rockspec
-```
 
 ### 데이터 처리
+영상들은 어떤 데이터베이스에서도 전처리되어가 패키지될 필요가 없습니다. 데이터세트트 SSD에 보관하는 것이 선호됩니다. 그러나 우리는 속도의 손실 없이 NFS에서 편하게 데이터를 로드할 수 있도록 하였습니다. 우리는 SubFolderName == ClassName의 단순한 규약을 사용합니다. 예를 들어, 만약 당신이 {cat,dog}의 부류를 가진다면, cat 영상들은 dataset/cat으로 그리고 dog 영상들은 dataset/dog로 갈 것입니다.
+
 이미지네트 훈련 영상들은 이미 n07579787, n07880968 같은 적절한 하위 폴더에 있습니다. 우리가 해야 할 일은 검증 정답(validation groundtruth)을 얻고 그 검증 영상들을 적절한 하위 폴더들로 옮기는 일입니다. 이를 위해, ILSVRC2012_img_train.tar 그리고 ILSVRC2012_img_val.tar를 내려받으십시오. 그리고 다음 명령어들을 입력합니다:
 
 ```bash
