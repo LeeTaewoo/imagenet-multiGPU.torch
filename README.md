@@ -1,8 +1,6 @@
 ## Torch7과 다수의 GPU를 사용한 [이미지네트(ImageNet)](http://image-net.org/download-images) 객체 분류
 
-원문: https://github.com/soumith/imagenet-multiGPU.torch
-
-2015년 11월 6일에 마지막으로 갱신됨.
+원문: https://github.com/soumith/imagenet-multiGPU.torch (이 문서는 2015년 11월 6일에 마지막으로 갱신됨).
 
 (영상들을 위한 범용 그리고 고도로 확장 가능한 데이터 로더를 포함하는 1,200줄의) 이 짧은 예제로 우리는 다음을 보이려고 합니다:
 - 이미지네트에 대해 [알렉스네트(AlexNet)](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks), [오버피트(Overfeat)](http://arxiv.org/abs/1312.6229), VGG, Googlenet를 훈련
