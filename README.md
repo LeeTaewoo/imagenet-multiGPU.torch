@@ -7,7 +7,7 @@
 (영상들을 위한 범용 그리고 고도로 확장 가능한 데이터 로더를 포함하는 1,200줄의) 이 짧은 예제로 우리는 다음을 보이려고 합니다:
 - 이미지네트에 대해 [알렉스네트(AlexNet)](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks), [오버피트(Overfeat)](http://arxiv.org/abs/1312.6229), VGG, Googlenet를 훈련
 - 다양한 백엔드(backend)를 보여줌: cuDNN, cuNN
-- - 여러 개의 GPU로 훈련을 가속하기 위한 nn.DataParalellTable 사용
+- 여러 개의 GPU로 훈련을 가속하기 위한 nn.DataParalellTable 사용
 - 디스크에서 멀티스레드로 데이터 로딩 (한 스레드에서 다른 한 스레드로 직렬화 없이 텐서들의 전송을 보임)
 
 ### 미리 준비할 것
